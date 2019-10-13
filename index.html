@@ -8,7 +8,8 @@
     <script>
         const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         const special = [`!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`, `\``, `]`, `^`, `_`, "`",`{`, `|`, `}`, `~`];
-
+        const functionsToCall = [];
+        const password = [];
 
         function randomNumber(max){
             return Math.floor(Math.random() * (max));
@@ -22,6 +23,28 @@
         function randomSpecialChar(){
             return special[randomNumber(special.length)];
         };
+
+        const passwordNumbers = confirm (`Would you like numbers in the password?`);
+        if (passwordNumbers){
+            functionsToCall.push(randomNumber(10));
+        };
+        const passwordLowerCase = confirm (`Would you like lower case letters in the password?`);
+        if (passwordLowerCase){
+            functionsToCall.push(randomLowerLetter());
+        };
+        const passwordUpperCase = confirm (`Would you like upper case letters in the password?`);
+        if (passwordUpperCase){
+            functionsToCall.push(randomUpperLetter());            
+        };
+        const passwordSpecial = confirm (`Would you like special letters in the password?`);
+        if (passwordSpecial){
+            functionsToCall.push(randomSpecialChar());
+        };
+        const desiredPasswordLength = prompt (`How long would you like your password?`);
+        
+        console.log (`Functions to call length: ${functionsToCall.length}`);
+        console.log (`Functions to call contents: ${functionsToCall} `);
+
    
 
     </script>
