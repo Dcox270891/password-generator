@@ -70,13 +70,59 @@
                 <div class="row">
                     <div class="column">
                         <div class="characters-for-password">
-                            
+                            <form class="requirments" action="generate-password">
+                                <p>
+                                    Do you need the following in your password?
+                                </p>
+                                <div class="functions">
+                                    <input type="checkbox" id="numbers" name="numbers">
+                                    <label for="numbers">Number</label>
+                                </div>
+                                <div class="functions">
+                                    <input type="checkbox" id="lower-case" name="lower-case">
+                                    <label for="lower-case">Lower case letters</label>
+                                </div>
+                                <div class="functions">
+                                    <input type="checkbox" id="upper-case" name="upper-case">
+                                    <label for="upper-case">Upper case letters</label>
+                                </div>
+                                <div class="functions">
+                                    <input type="checkbox" id="special-characters" name="special-characters">
+                                    <label for="special-characters">Special characters</label>
+                                </div>
+                                <div class="password-length">
+                                    <label for="password-length">
+                                        How long would you need the password?
+                                    </label><br>
+                                    <input type="text" id="password-length" name="password-length" placeholder="Password length">
+                                </div>
+                            </form>
                         </div>
                         <div class="password-area">
-
+                            <div class="password-generated">
+                                <h2>
+                                    Password here...
+                                </h2>
+                            </div>
                         </div>
                         <div class="buttons">
-                            
+                            <button type="button" class="button confirm-button">
+                                Generate a password
+                            </button>
+                            <button type="button" class="button copy-button">
+                                Copy to clipboard
+                            </button>
+                            <div class="email-to">
+                                <form action="email">
+                                    <div class="email-address">
+                                        <label for="email-address">
+                                            Send via Email
+                                        </label><br>
+                                        <input type="text" id="email-address" name="email-address" placeholder="Email address">
+                                    </div>
+                                    <input type="submit" value="E-mail">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
