@@ -5,133 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
-    <script>
-        const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        const special = [`!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`, `\``, `]`, `^`, `_`, "`",`{`, `|`, `}`, `~`];
-        let functionsToCall = [];
-        let password = [];
-
-        function randomNumber(max){
-            return Math.floor(Math.random() * (max));
-        };
-        function randomLowerLetter(){
-            return letters[randomNumber(letters.length)];
-        };
-        function randomUpperLetter(){
-            return randomLowerLetter().toUpperCase();
-        };
-        function randomSpecialChar(){
-            return special[randomNumber(special.length)];
-        };
-
-        const passwordNumbers = confirm (`Would you like numbers in the password?`);
-        const passwordLowerCase = confirm (`Would you like lower case letters in the password?`);
-        const passwordUpperCase = confirm (`Would you like upper case letters in the password?`);
-        const passwordSpecial = confirm (`Would you like special letters in the password?`);
-        const desiredPasswordLength = prompt (`How long would you like your password?`);
-        
-        function randomCharFromFunctions(){
-            if(passwordNumbers){
-                functionsToCall.push(randomNumber(10));
-            };
-            if (passwordLowerCase){
-                functionsToCall.push(randomLowerLetter());
-            };
-            if (passwordUpperCase){
-                functionsToCall.push(randomUpperLetter());            
-            };
-            if (passwordSpecial){
-                functionsToCall.push(randomSpecialChar());
-            };
-            let characterTypeChosen = randomNumber(functionsToCall.length);
-            let charChosen = functionsToCall.slice(characterTypeChosen, (characterTypeChosen +1));
-            password.push(charChosen);
-        };
-
-        if (password.length < desiredPasswordLength.length) {
-             for (let i = 0; i < desiredPasswordLength; i ++){
-                charChosen = [];
-                characterTypeChosen = [];
-                functionsToCall = [];
-                randomCharFromFunctions();
-            };
-        }
-        alert (`Your password is: ${password.join("")}`);
-    </script>
+    <link rel="stylesheet" href="assets/index.css">
+    <script src="assets/script.js"></script>
 </head>
 <body>
-    <div class="row">
-        <div class="column">
-            <header class="header">
-                <h1 class="heading">Password Generator</h1>
-            </header>
+    <header class="header">
+            <h1 class="heading">Password Generator</h1>
+    </header>
 
-            <body class="body">
-                <div class="row">
-                    <div class="column">
-                        <div class="characters-for-password">
-                            <form class="requirments" action="generate-password">
-                                <p>
-                                    Do you need the following in your password?
-                                </p>
-                                <div class="functions">
-                                    <input type="checkbox" id="numbers" name="numbers">
-                                    <label for="numbers">Number</label>
-                                </div>
-                                <div class="functions">
-                                    <input type="checkbox" id="lower-case" name="lower-case">
-                                    <label for="lower-case">Lower case letters</label>
-                                </div>
-                                <div class="functions">
-                                    <input type="checkbox" id="upper-case" name="upper-case">
-                                    <label for="upper-case">Upper case letters</label>
-                                </div>
-                                <div class="functions">
-                                    <input type="checkbox" id="special-characters" name="special-characters">
-                                    <label for="special-characters">Special characters</label>
-                                </div>
-                                <div class="password-length">
-                                    <label for="password-length">
-                                        How long would you need the password?
-                                    </label><br>
-                                    <input type="text" id="password-length" name="password-length" placeholder="Password length">
-                                </div>
-                            </form>
+    <body class="body">
+        <div class="row">
+            <div class="column">
+                <div class="characters-for-password">
+                    <form class="requirments" action="generate-password">
+                        <p>
+                            Do you need the following in your password?
+                        </p>
+                        <div class="functions">
+                            <input type="checkbox" id="numbers" name="numbers">
+                            <label for="numbers">Number</label>
                         </div>
-                        <div class="password-area">
-                            <div class="password-generated">
-                                <h2>
-                                    Password here...
-                                </h2>
-                            </div>
+                        <div class="functions">
+                            <input type="checkbox" id="lower-case" name="lower-case">
+                            <label for="lower-case">Lower case letters</label>
                         </div>
-                        <div class="buttons">
-                            <button type="button" class="button confirm-button">
-                                Generate a password
-                            </button>
-                            <button type="button" class="button copy-button">
-                                Copy to clipboard
-                            </button>
-                            <div class="email-to">
-                                <form action="email">
-                                    <div class="email-address">
-                                        <label for="email-address">
-                                            Send via Email
-                                        </label><br>
-                                        <input type="text" id="email-address" name="email-address" placeholder="Email address">
-                                    </div>
-                                    <input type="submit" value="E-mail">
-                                </form>
-                            </div>
+                        <div class="functions">
+                            <input type="checkbox" id="upper-case" name="upper-case">
+                            <label for="upper-case">Upper case letters</label>
                         </div>
+                        <div class="functions">
+                            <input type="checkbox" id="special-characters" name="special-characters">
+                            <label for="special-characters">Special characters</label>
+                        </div>
+                        <div class="password-length">
+                            <label for="password-length">
+                                How long would you need the password?
+                            </label><br>
+                            <input type="text" id="password-length" name="password-length" placeholder="Password length">
+                        </div>
+                        <br>
+                        <button type="button" class="button confirm-button">
+                            Generate a password
+                        </button>
+                    </form>
+                </div>
+                <br>
+                <div class="password-area">
+                    <div class="password-generated">
+                        <input id="password-here" class="password-here" placeholder="Your password will be here...">
                     </div>
                 </div>
-            </body>
-
-            <footer class="footer">
-                <p class="footer-text">Copyright</p>
-            </footer>
+                <br>
+                <div class="buttons">
+                    <button type="button" class="button copy-button">
+                        Copy to clipboard
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
+    </body>
+
+    <footer class="footer">
+        <p class="footer-text">Copyright</p>
+    </footer>
 </body>
 </html>
