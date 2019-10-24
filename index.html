@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
     <link rel="stylesheet" href="assets/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -21,28 +22,40 @@
                             Do you need the following in your password?
                         </p>
                         <div class="functions">
-                            <input type="checkbox" id="numbers" name="numbers">
-                            <label for="numbers">Number</label>
+                            <label class="switch" for="numbers">
+                                <input class="checkbox" type="checkbox" id="numbers" name="numbers">
+                                <span class="slider round"></span>
+                                <p class="switch-text">Number</p>
+                            </label>
                         </div>
                         <div class="functions">
-                            <input type="checkbox" id="lower-case" name="lower-case">
-                            <label for="lower-case">Lower case letters</label>
+                            <label class="switch" for="lower-case">
+                                <input class="checkbox" type="checkbox" id="lower-case" name="lower-case">
+                                <span class="slider round"></span>
+                                <p class="switch-text">Lower case letters</p>
+                            </label>
                         </div>
                         <div class="functions">
-                            <input type="checkbox" id="upper-case" name="upper-case">
-                            <label for="upper-case">Upper case letters</label>
+                            <label class="switch" for="upper-case">
+                               <input class="checkbox" type="checkbox" id="upper-case" name="upper-case">
+                                <span class="slider round"></span>
+                                <p class="switch-text">Upper case letters</p>
+                            </label>
                         </div>
                         <div class="functions">
-                            <input type="checkbox" id="special-characters" name="special-characters">
-                            <label for="special-characters">Special characters</label>
+                            <label class="switch" for="special-characters">
+                                <input class="checkbox" type="checkbox" id="special-characters" name="special-characters">
+                                <span class="slider round"></span>
+                                <p class="switch-text">Special characters</p>
+                            </label>
                         </div>
                         <div class="password-length">
                             <label for="password-length">
                                 How long would you need the password?
-                            </label><br>
-                            <input type="text" id="password-length" name="password-length" placeholder="Password length">
+                                <br>
+                                <input type="text" id="password-length" name="password-length" placeholder="Length">
+                            </label>
                         </div>
-                        <br>
                         <button type="button" class="button confirm-button" id="submit-button">
                             Generate a password
                         </button>
