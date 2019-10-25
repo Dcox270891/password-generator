@@ -6,7 +6,7 @@ const passwordLength = document.querySelector(`#password-length`);
 const submitButton = document.querySelector(`#submit-button`);
 const passwordArea = document.querySelector(`#password-here`);
 const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const special = [`!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`, `\``, `]`, `^`, `_`, "`",`{`, `|`, `}`, `~`];
+const special = [`!`, `\"`, `#`, `$`, `%`, `&`, `\'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`, `\``, `]`, `^`, `_`, "`",`{`, `|`, `}`, `~`];
 let password = [];
 let numberRequired = false;
 let lowerRequired = false;
